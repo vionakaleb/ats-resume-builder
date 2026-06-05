@@ -13,7 +13,7 @@ const TABS = [
 
 export default function App() {
   const { theme, toggleTheme } = useTheme();
-  const { data, update, importParsed, loadJson } = useResumeData();
+  const { data, update, importParsed, loadJson, resetData } = useResumeData();
   const [tab, setTab] = useState("edit");
 
   return (
@@ -24,6 +24,7 @@ export default function App() {
         onToggleTheme={toggleTheme}
         onImport={importParsed}
         onLoadJson={loadJson}
+        onReset={resetData}
       />
 
       <nav className="no-print flex gap-1 border-b border-slate-200 bg-white px-3 py-2 lg:hidden dark:border-slate-800 dark:bg-slate-900">

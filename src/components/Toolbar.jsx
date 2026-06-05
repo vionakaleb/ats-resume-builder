@@ -21,6 +21,7 @@ export default function Toolbar({
   onToggleTheme,
   onImport,
   onLoadJson,
+  onReset,
 }) {
   const pdfInput = useRef(null);
   const jsonInput = useRef(null);
@@ -86,6 +87,15 @@ export default function Toolbar({
     }
   };
 
+  const handleReset = () => {
+    const confirmed = window.confirm(
+      "Reset all resume data to the initial state? This will erase your current edits and cannot be undone.",
+    );
+    if (!confirmed) return;
+    onReset();
+    setStatus({ kind: "ok", text: "Resume data reset to initial state." });
+  };
+
   const statusColor = {
     ok: "text-emerald-600 dark:text-emerald-400",
     error: "text-rose-600 dark:text-rose-400",
@@ -133,6 +143,13 @@ export default function Toolbar({
         </Button>
         <Button variant="primary" onClick={handleExport} disabled={exporting}>
           {exporting ? "Generating..." : "Export PDF"}
+        </Button>
+        <Button
+          variant="outline"
+          onClick={handleReset}
+          title="Reset to initial data"
+        >
+          Reset
         </Button>
         <Button variant="outline" onClick={onToggleTheme} title="Toggle theme">
           {theme === "dark" ? "☀" : "☾"}

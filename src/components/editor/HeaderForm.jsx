@@ -4,7 +4,7 @@ import { TextField } from "../ui/Field.jsx";
 export default function HeaderForm({ data, update }) {
   const set = (field) => (value) =>
     update((draft) => {
-      draft[field] = value;
+      draft[field] = field === "name" ? value.toUpperCase() : value;
     });
 
   return (
