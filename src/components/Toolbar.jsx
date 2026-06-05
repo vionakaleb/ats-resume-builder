@@ -145,11 +145,11 @@ export default function Toolbar({
       >
         Save
       </Button> */}
-      <Button variant="outline" onClick={onToggleTheme} title="Toggle theme">
-        {theme === "dark" ? "☀ Light" : "☾ Dark"}
-      </Button>
       <Button variant="primary" onClick={handleExport} disabled={exporting}>
         {exporting ? "Generating..." : "Export PDF"}
+      </Button>
+      <Button variant="outline" onClick={onToggleTheme} title="Toggle theme">
+        {theme === "dark" ? "☀ Light" : "☾ Dark"}
       </Button>
     </header>
   );
