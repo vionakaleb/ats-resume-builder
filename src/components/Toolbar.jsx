@@ -130,7 +130,7 @@ export default function Toolbar({
       <Button variant="subtle" onClick={() => pdfInput.current?.click()}>
         Import LinkedIn PDF
       </Button>
-      <Button variant="ghost" onClick={() => jsonInput.current?.click()}>
+      {/* <Button variant="ghost" onClick={() => jsonInput.current?.click()}>
         Load
       </Button>
       <Button
@@ -144,7 +144,7 @@ export default function Toolbar({
         }
       >
         Save
-      </Button>
+      </Button> */}
       <Button variant="outline" onClick={onToggleTheme} title="Toggle theme">
         {theme === "dark" ? "☀ Light" : "☾ Dark"}
       </Button>
