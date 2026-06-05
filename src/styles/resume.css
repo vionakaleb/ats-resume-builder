@@ -1,0 +1,165 @@
+.resume-page {
+  --navy: #1f3864;
+  --gray: #595959;
+  --ink: #1a1a1a;
+  --resume-accent: var(--navy);
+  --resume-font: "Calibri", "Carlito", "Segoe UI", system-ui, Arial, sans-serif;
+
+  width: 210mm;
+  min-height: 297mm;
+  padding: 19mm 20mm;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  font-family: var(--resume-font);
+  color: var(--ink);
+  box-sizing: border-box;
+}
+
+.resume-page p {
+  margin: 0;
+}
+.resume-page p,
+.resume-page li {
+  orphans: 2;
+  widows: 2;
+}
+
+.resume-page .name {
+  text-align: center;
+  font-weight: 700;
+  color: var(--resume-accent);
+  font-size: 24pt;
+  letter-spacing: 2px;
+}
+.resume-page .headline {
+  text-align: center;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 11.5pt;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 3pt;
+}
+.resume-page .contact {
+  text-align: center;
+  color: var(--gray);
+  font-size: 10pt;
+  margin-top: 7pt;
+}
+.resume-page .contact a {
+  color: var(--resume-accent);
+  text-decoration: none;
+}
+.resume-page h2.section {
+  color: var(--resume-accent);
+  font-size: 12pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1.3px solid var(--resume-accent);
+  padding-bottom: 3pt;
+  margin: 15pt 0 7pt;
+  break-after: avoid;
+}
+.resume-page .summary {
+  font-size: 10.5pt;
+  line-height: 1.4;
+}
+.resume-page .skill {
+  font-size: 10.5pt;
+  line-height: 1.4;
+  margin-bottom: 4pt;
+}
+.resume-page .skill b {
+  color: var(--resume-accent);
+}
+.resume-page .entry {
+  margin-bottom: 9pt;
+  break-inside: avoid;
+}
+.resume-page .entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+}
+.resume-page .entry-title {
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: var(--ink);
+}
+.resume-page .entry-date {
+  font-size: 10pt;
+  color: var(--gray);
+  white-space: nowrap;
+}
+.resume-page .entry-sub {
+  font-size: 10.5pt;
+  margin: 1pt 0 3pt;
+}
+.resume-page .entry-sub b {
+  color: var(--resume-accent);
+}
+.resume-page .entry-sub .loc {
+  color: var(--gray);
+}
+.resume-page ul.bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.resume-page ul.bullets li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 3pt;
+  font-size: 10.5pt;
+  line-height: 1.36;
+}
+.resume-page ul.bullets li::before {
+  content: "\2022";
+  color: var(--resume-accent);
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.resume-page .langs {
+  font-size: 10.5pt;
+}
+.resume-page .langs b {
+  color: var(--resume-accent);
+}
+.resume-page .lang-item {
+  margin-right: 22px;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .resume-print,
+  .resume-print * {
+    visibility: visible;
+  }
+  .resume-print {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  .resume-print .resume-page {
+    box-shadow: none;
+    margin: 0 auto;
+    width: 210mm;
+    min-height: auto;
+  }
+}
